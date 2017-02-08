@@ -1,0 +1,25 @@
+GEM
+  specs:
+    autoprefixer-rails (6.7.2)
+      execjs
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
+    concurrent-ruby (1.0.4)
+    execjs (2.7.0)
+    rack (2.0.1)
+    sass (3.4.23)
+    sprockets (3.7.1)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  autoprefixer-rails
+  bootstrap-sass
+  sprockets
+
+BUNDLED WITH
+   1.13.6

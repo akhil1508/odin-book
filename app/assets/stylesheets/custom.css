@@ -1,0 +1,20 @@
+#sign-up-form {
+  margin-left: 30%;
+  margin-top: 10%;
+}
+
+#sign-up-form form {
+  text-align: left;
+}
+
+#sign-up-form form .field {
+  display: block;
+  margin-top: 2%;
+}
+#sign-up-form form .field input {
+  margin-left: 1%;
+}
+#sign-up-form form .actions {
+  margin-top: 2%;
+  margin-left: 21%;
+}
