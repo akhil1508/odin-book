@@ -8,3 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     end
   end
 end
+# So first I created a table called users with name attribute, first and last. K? K? k
+
+# Moving on to the next migration file
+# In order of creation. Capiche?YEsType inside comments.K

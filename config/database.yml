@@ -16,7 +16,7 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
+  encoding: SQL_ASCII
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -27,6 +27,7 @@ development:
   host: localhost
   username: facebook-clone-user
   password: facebook-clone
+  encoding: SQL_ASCII
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -61,6 +62,7 @@ test:
   <<: *default
   database: facebook-clone_test
   host: localhost
+  encoding: SQL_ASCII
   username: facebook-clone-user
   password: facebook-clone
   

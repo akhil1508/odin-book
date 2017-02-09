@@ -1,0 +1,73 @@
+where? what's up dude?k
+dude what are these hidden fields? Okay! go ahead
+dude, now we cannot send information using links in http.
+links can only get not post
+so we have to use forms for this stuff, accepting rejecting and so on.
+Now this form is not going to take any data entry from user.
+User will see friend req info and either click on accept or on reject.
+So we need params to contain the information about the friend which the create function will then use.
+Got it? this info is stored in hidden fields
+you here?
+
+dude don't erase any of the comments. They will serve as great memories ;) just like the LoLLLL.
+Okay!
+So our first prototype for a post will only have text
+and nothing else
+check out in console
+posts structure
+server aint running
+I know that. but still. Ok
+server not needed for console server needed only for browser app
+we'll run it when we need to. oh we need to initialize postgres again
+Ok, NO
+Done, can you see post structure?
+why not? rails c. and then Post.connection and then Post
+Post(id: integer, content: text, user_id: integer, created_at: datetime, updated_at: datetime) 
+so what do you infer from this? 
+each post has an ID, content: text , user_id: who posted it and time of post
+k
+So check out if User.first.posts is working
+No ??
+So, it seems like the user has no post thing and yet both tables are there in database. Which obviously means that the association is not setup.
+So, how would you setup the association? 
+using user_id as primary key??????
+Dude, your idea is fine but the thing is rails has already set up so much stuff for us. We don't really have to think about the keys.the id in the users table will be a primary key.
+The user_id wil be a foreign key to that table. Coz a user can make posts and a post cannot make users.
+Ok, has_many :posts foreign key:user_id user.rb
+So how will you implement this? Hint: You will have to add code to both your user and post models.
+that goes into which model?
+And? Okay dude, listen. Rails is really clever. Since we have named the user as user.rb and the post as post.rb rails will automatically look for an id with the "name"_id name. As in if there is a ghost model which has many clothes. Then rails will join ghosts and clothes automatically by ghosts.id == clothes.ghost_id. Similarly here, it will automatically join using user.id == posts.user_id. We don't need to specify.
+However, if the name is different, then we will need to specify. Got it?
+Yes
+If you have a cricket_bat.rb and a wood.rb and a willow_id in the wood.rb which you wish to use as foreign key then you will specify. Coz here the column name is not cricket_bat_id. It is willow_id.
+K? So what will you do next????. Dude give it a shot. It is really simple. A user can make many posts. Each post is the property of just one user.
+Hint: has_many and belongs_to. SO just add the associations. Remember, the model is just an abstract representation of rows in the database. We've already created the database. Now we want rails to do its magic so that a user can have many posts and each post can belong to a user.
+Just let rails know that a user can have many posts and a post can belong to a user. ???????
+so what to do?
+Dude
+It ain't that complex. We only used through earlier coz we were doing self-referential structures. The user has friends who are also users. That is why we used through and a separate table called friendships. Here we don't need to do that.
+All you have to do is:
+has_many :posts in the user.rb file
+belongs_to :user in the post.rb file
+that's it
+So it is working
+as simple as that. You understood what is going on at a lower level? yes
+
+So we move on. Just create two posts using first user and second user. Put in any content you want. We want these posts to exist in the database coz we will be showing them in our views.Done? huh? DUde, are you there?
+Ok............................huh?
+back? I never left.done generating?
+yes done
+create a 'new' view for the posts controller
+done? dude do it fast
+
+
+
+
+
+
+
+
+
+
+
+

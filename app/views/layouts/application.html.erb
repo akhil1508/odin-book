@@ -13,7 +13,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
        <div class="navbar-header">
-         <a class="navbar-brand" href="#">WebSiteName</a>
+         <%= link_to "Facebook-for-M", root_path %>
        </div>
        <ul class="nav navbar-nav">
          <li class="active"><a href="#">Home</a></li>
@@ -23,6 +23,33 @@
        </ul>
      </div>
     </nav>
+    <%else%>
+    <!--  <div id = "notsignedin">
+      <nav class = "navbar navbar-default">
+              <div class="container-fluid">
+        <div class="navbar-header">
+         <%= link_to "Facebook-for-M", root_path %>
+       </div>
+       <ul class = "nav navbar-nav">
+      <li></li><%= link_to "Log in now", new_user_session_path %></li>
+      <li><%= link_to "Sign up mate", new_user_registration_path %></li>
+      </ul>
+      </div>
+      </nav>
+      </div>
+      -->
+      <nav class="navbar navbar-default">
+      <div class="container-fluid">
+       <div class="navbar-header">
+         <%= link_to "Facebook-for-M", root_path %>
+       </div>
+       <ul class="nav navbar-nav">
+         <li class="active"><%=link_to "Log in", new_user_session_path%></li>
+         <li><%=link_to "Sign up", new_user_registration_path%></li>
+      </ul>
+     </div>
+    </nav>
+    
     <%end%>
     <%flash.each do |k,v|%>
       <div class = "alert alert-<%k%>">
@@ -30,5 +57,6 @@
       </div>
       <%end%>
     <%= yield %>
+    <%= debug(params) %>
   </body>
 </html>

@@ -1,0 +1,19 @@
+<ul>
+    <% @users.each do |user| %>
+    <%if user.id != current_user.id %> 
+            <% name = full_name(user) %>
+        <li>
+        Name: <%= name %> 
+        <%= link_to "#{name}'s profile", controller: :users, action: :show, id: user.id %>
+        <%= link_to "#{name}'s posts", user_posts_path(current_user.id) %> 
+        <%= form_for :friendship, url: friendships_path, method: :post do |f| %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :friend_id, value: user.id%>
+            <%=f.submit "Make this dude my friend or at least ask him/her."%>
+        <%end %>
+        </li>
+        
+    <%end%>
+    <% end %>
+    <%= debug(@users.inspect)%>
+</ul>

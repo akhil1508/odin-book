@@ -1,0 +1,20 @@
+<ul id = 'friends-list' %>
+<%@potential_friends.each do |potential_friend| %>
+        <li>
+            Name: <%= potential_friend.first_name %> <%=potential_friend.last_name%> 
+            <!--logic for displaying form for accepting goes here -->
+            <%= form_for :inverse_friend, method: :post, url: friend_requests_path  do |f| %>
+                <%= f.submit "Accept request" %>
+                <%= f.hidden_field :potential_friend_id, value: potential_friend.id %>
+                <%= f.hidden_field :consent, value: true %>
+            <%end%># This one is for accepting
+            <%= form_for :inverse_friend, method: :post, url: friend_requests_path do |f| %>
+                <%= f.submit "Decline request" %>
+                <%= f.hidden_field :potential_friend_id, value: potential_friend.id %>
+                <%= f.hidden_field :consent, value: false %>
+            <%end%># This one is for rejecting
+        </li>
+ <%end%>  
+ </ul>
+   <!-- no,wait. first we configure routes. Dude. We haven't set up post route for inverse friendships so this form isn;t gonna work.
+   We have to setup routes in routes.rb. Meet your there in 3....2....1..
